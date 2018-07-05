@@ -1,8 +1,9 @@
 --- 
-title_meta  : Chapter 1
-title       : Intro to basics
-description : "In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let's get started!"
-
+title: "Intro to basics"
+description: In this chapter, you will take your first steps with R. You will learn
+  how to use the console as a calculator and how to assign variables. You will also
+  get to know the basic data types in R. Let's get started!
+title_meta: Chapter 1
 ---
 ## How it works
 
@@ -29,6 +30,8 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 `@pre_exercise_code`
 ```{r}
 # no pec
+# library("devtools")
+# install_github("datacamp/testwhat")
 ```
 
 `@sample_code`
@@ -49,11 +52,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 6 + 12
 ```
 
-`@sct`
-```{r}
-test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
-```
+<!-- `@sct` -->
+<!-- ```{r} -->
+<!-- library(testwhat) -->
+<!-- test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!") -->
+<!-- success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familia -->
+
+<!--             r with the interface, let's get down to R business!") -->
+<!-- ``` -->
 
 ---
 ## Arithmetic with R
@@ -137,13 +143,14 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 28 %% 6
 ```
 
-`@sct`
-```{r}
-msg = "Do not remove the other arithmetic examples!"
-test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
-test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
-```
+
+<!-- `@sct` -->
+<!-- ```{r} -->
+<!-- msg = "Do not remove the other arithmetic examples!" -->
+<!-- test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.") -->
+<!-- test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.") -->
+<!-- success_msg("Great! Head over to the next exercise.") -->
+<!-- ``` -->
 
 
 ---
@@ -180,10 +187,10 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 `@sample_code`
 ```{r}
 # Assign the value 42 to x
-x <- 
+# x <- 
 
 # Print out the value of the variable x
-x
+# x
 ```
 
 `@solution`
@@ -195,12 +202,12 @@ x <- 42
 x
 ```
 
-`@sct`
-```{r}
-test_object("x", undefined_msg = "Make sure to define a variable `x`.",
-            incorrect_msg = "Make sure that you assign the correct value to `x`.") 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
-```
+<!-- `@sct` -->
+<!-- ```{r} -->
+<!-- test_object("x", undefined_msg = "Make sure to define a variable `x`.", -->
+<!--             incorrect_msg = "Make sure that you assign the correct value to `x`.")  -->
+<!-- success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!") -->
+<!-- ``` -->
 
 
 ---
@@ -246,14 +253,14 @@ my_apples <- 5
 my_apples
 ```
 
-`@sct`
-```{r}
-test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable `my_apples`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
-test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
-success_msg("Great! Continue to the next exercise!")
-```
+<!-- `@sct` -->
+<!-- ```{r} -->
+<!-- test_object("my_apples",  -->
+<!--             undefined_msg = "Please make sure to define a variable `my_apples`.", -->
+<!--             incorrect_msg = "Make sure that you assign the correct value to `my_apples`.") -->
+<!-- test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?") -->
+<!-- success_msg("Great! Continue to the next exercise!") -->
+<!-- ``` -->
 
 
 ---
@@ -311,16 +318,16 @@ my_apples + my_oranges
 my_fruit <- my_apples + my_oranges
 ```
 
-`@sct`
-```{r}
-test_object("my_apples", incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
-test_object("my_oranges", incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
-```
+<!-- `@sct` -->
+<!-- ```{r} -->
+<!-- test_object("my_apples", incorrect_msg = "Keep the line that assigns 5 to `my_apples`.") -->
+<!-- test_object("my_oranges", incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.") -->
+<!-- test_output_contains("my_apples + my_oranges", -->
+<!--                      incorrect_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!") -->
+<!-- msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?" -->
+<!-- test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg) -->
+<!-- success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.") -->
+<!-- ``` -->
 
 
 ---
